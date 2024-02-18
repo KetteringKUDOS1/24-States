@@ -400,11 +400,13 @@ void skills(){
     master.rumble("-  .  -");
 
   }
+  intakestop();
+  stop_wheel();
   chassis.set_drive_pid(-24, DRIVE_SPEED);
   chassis.wait_drive();
   chassis.set_turn_pid(-45, TURN_SPEED);
     chassis.wait_drive();
-    chassis.set_drive_pid(-10, DRIVE_SPEED);
+    chassis.set_drive_pid(-15, DRIVE_SPEED);
   chassis.wait_drive();
 
   for(int i=0; i<10; i++){
