@@ -12,18 +12,18 @@
 Drive chassis (
   // Left Chassis Ports (negative port will reverse it!)
   //   the first port is the sensored port (when trackers are not used!)
-  {11, -20, -16}
+  {13, -17}
 
   // Right Chassis Ports (negative port will reverse it!)
   //   the first port is the sensored port (when trackers are not used!)
-  ,{-17, 14, 12}
+  ,{-14, 16}
 
   // IMU Port
   ,19
 
   // Wheel Diameter (Remember, 4" wheels are actually 4.125!)
   //    (or tracking wheel diameter)
-  ,3.25
+  ,4
 
   // Cartridge RPM
   //   (or tick per rotation if using tracking wheels)
