@@ -9,7 +9,7 @@
 // https://ez-robotics.github.io/EZ-Template/
 /////
 
-const int DRIVE_SPEED = 90; // This is 110/127 (around 87% of max speed).  We don't suggest making this 127.
+const int DRIVE_SPEED = 110; // This is 110/127 (around 87% of max speed).  We don't suggest making this 127.
                              // If this is 127 and the robot tries to heading correct, it's only correcting by
                              // making one side slower.  When this is 87%, it's correcting by making one side
                              // faster and one side slower, giving better heading correction.
@@ -391,7 +391,7 @@ void skills(){
   intake.set_value(true);
   intakein(600);
 
-  for(int i=0; i<24; i++){
+  for(int i=0; i<2; i++){
     
     intake.set_value(true);
     pros::delay(600);
@@ -400,5 +400,31 @@ void skills(){
     master.rumble("-  .  -");
 
   }
+  chassis.set_drive_pid(-24, DRIVE_SPEED);
+  chassis.wait_drive();
+  chassis.set_turn_pid(-45, TURN_SPEED);
+    chassis.wait_drive();
+    chassis.set_drive_pid(-10, DRIVE_SPEED);
+  chassis.wait_drive();
+
+  for(int i=0; i<10; i++){
+    
+    chassis.set_drive_pid(-15, DRIVE_SPEED);
+    chassis.wait_drive();
+    chassis.set_drive_pid(14, DRIVE_SPEED);
+    chassis.wait_drive();
+    chassis.set_drive_pid(-15, DRIVE_SPEED);
+    chassis.wait_drive();
+    chassis.set_drive_pid(14, DRIVE_SPEED);
+    chassis.wait_drive();
+    chassis.set_turn_pid(45, TURN_SPEED);
+    chassis.wait_drive();
+    chassis.set_drive_pid(-10, DRIVE_SPEED);
+    chassis.wait_drive();
+    chassis.set_turn_pid(-45, TURN_SPEED);
+    chassis.wait_drive();
+  }
+
+
 }
 
