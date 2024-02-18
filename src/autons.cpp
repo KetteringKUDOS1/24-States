@@ -2,6 +2,8 @@
 #include "autons.hpp"
 #include "intake.hpp"
 #include "cata.hpp"
+#include "flywheel.hpp"
+
 /////
 // For instalattion, upgrading, documentations and tutorials, check out website!
 // https://ez-robotics.github.io/EZ-Template/
@@ -383,4 +385,20 @@ void awp2(){
   chassis.wait_drive();
 }
 
+
+void skills(){
+  start_wheel();
+  intake.set_value(true);
+  intakein(600);
+
+  for(int i=0; i<24; i++){
+    
+    intake.set_value(true);
+    pros::delay(600);
+    intake.set_value(false);
+    pros::delay(600);
+    master.rumble("-  .  -");
+
+  }
+}
 
