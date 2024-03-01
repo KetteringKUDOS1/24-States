@@ -388,10 +388,11 @@ void awp2(){
 
 void skills(){
   start_wheel();
+  pros::delay(1000);
   intake.set_value(true);
   intakein(600);
-
-  for(int i=0; i<2; i++){
+  
+  for(int i=0; i<22; i++){
     
     intake.set_value(true);
     pros::delay(600);
